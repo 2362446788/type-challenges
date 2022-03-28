@@ -8,6 +8,8 @@ type TupleToObject<T extends readonly (string | number | symbol)[]> = {
   [P in T[number]]: P;
 };
 
+type a = TupleToObject<string[]>;
+
 // 1、遍历数组 T[number]
 // 2、typeof 转换类型
 
@@ -24,3 +26,6 @@ const arr2 = [1, "2"] as const;
 type a2 = typeof arr2; // 转换为 readonly [1, '2'] 不允许被修改
 
 const tuple: [number, string] = [1, "2"];
+
+// @ts-expect-error
+// ts错误断言 https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html#-ts-expect-error-comments
