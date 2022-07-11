@@ -1,2 +1,5 @@
 # type-challenges
-typescript类型体操
+
+typescript 类型体操
+
+pending
