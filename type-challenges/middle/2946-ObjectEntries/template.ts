@@ -1,0 +1,1 @@
+type ObjectEntries<T, U = keyof T> = U extends keyof T ? [U, T[U] extends infer R | undefined ? R : never] : never;
