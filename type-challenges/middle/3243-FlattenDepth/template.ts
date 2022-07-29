@@ -10,3 +10,5 @@ type FlattenDepth<
   ? [...FlattenDepth<G, C, [...CO, 1]>, ...FlattenDepth<Rest, C, CO>]
   : [G, ...FlattenDepth<Rest, C, CO>]
   : T
+
+// type F = U;
