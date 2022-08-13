@@ -1,0 +1,1 @@
+type Fibonacci<any> = any;
