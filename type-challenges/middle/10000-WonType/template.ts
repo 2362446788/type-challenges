@@ -15,6 +15,16 @@ type T1 = {
   age: number;
 }
 
+
+// add DFS to generate type
+type DFS<T> = {
+  [Key in keyof T]: Key extends string ? T[Key] extends Record<string, any> ? Key | `${Key}.${DFS<T[Key]>}` : Key : never;
+}[keyof T]
+
+type res = DFS<Template>
+
+
+
 type LinkString<T extends string, U extends string, I extends string> = `${T}${U}${I}`;
 
 type ExpandTemplate<T, P extends keyof T = keyof T, U extends string = ''> =
