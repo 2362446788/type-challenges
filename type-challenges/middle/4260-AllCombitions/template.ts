@@ -13,3 +13,5 @@ type Combination<A extends string, B extends string> =
 type _AllCombinations<A extends string, B extends string = A> = A extends A
   ? Combination<A, _AllCombinations<Exclude<B, A>>>
   : never;
+
+type TT = String2Union<'a'>
