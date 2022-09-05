@@ -1,0 +1,1 @@
+type Chunk<T> = any
