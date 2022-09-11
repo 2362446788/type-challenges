@@ -1,0 +1,1 @@
+type Fill<any> = any;
