@@ -1,1 +1,1 @@
-type Trunc<any> = any;
+type Trunc<N extends string | number> = `${N}` extends `${infer I}.${any}` ? I : `${N}`
