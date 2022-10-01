@@ -1,1 +1,3 @@
-type Join<any> = any
+type Join<any> = any;
+
+// template
