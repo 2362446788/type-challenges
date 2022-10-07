@@ -1,0 +1,1 @@
+type LastIndexOf<any> = any
