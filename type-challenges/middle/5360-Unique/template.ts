@@ -1,0 +1,1 @@
+type Unique<any> = any;
