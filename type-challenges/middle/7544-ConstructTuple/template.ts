@@ -1,0 +1,1 @@
+type ConstructTuple<any> = any;
