@@ -1,1 +1,1 @@
-type NumberRange = any;
+type NumberRange<any> = any;
