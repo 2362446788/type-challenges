@@ -1,1 +1,1 @@
-type Combination = any;
+type Combination<any> = any;
