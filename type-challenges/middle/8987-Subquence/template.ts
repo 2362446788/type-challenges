@@ -1,0 +1,1 @@
+type Subquence<any> = any;
