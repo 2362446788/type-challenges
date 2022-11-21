@@ -11,3 +11,4 @@ type cases = [
 ]
 // @ts-expect-error
 type error = GetMiddleElement<1, 2, 3>
+aa
