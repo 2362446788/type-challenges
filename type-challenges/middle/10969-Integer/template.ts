@@ -1,1 +1,1 @@
-type Integer = any;
+type Integer<any> = any;
