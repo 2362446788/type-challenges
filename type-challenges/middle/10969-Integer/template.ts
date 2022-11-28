@@ -1,1 +1,1 @@
-type Integer<any> = any;
+type Integer<T extends number> = `${T}` extends `${bigint}` ? T : never
