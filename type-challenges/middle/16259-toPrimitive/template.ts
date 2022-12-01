@@ -1,0 +1,1 @@
+type TPrimitive<any> = any;
