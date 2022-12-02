@@ -1,1 +1,1 @@
-type TPrimitive<any> = any;
+type ToPrimitive<any> = any;
