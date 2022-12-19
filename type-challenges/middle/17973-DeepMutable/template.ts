@@ -1,1 +1,1 @@
-type DeepMutation = any;
+type DeepMutation<any> = any;
