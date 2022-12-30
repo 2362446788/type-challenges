@@ -1,6 +1,6 @@
-Implement a generic DeepMutable which make every parameter of an object - and its sub - objects recursively - mutable.
+`Implement a generic DeepMutable which make every parameter of an object - and its sub - objects recursively - mutable.
 
-For example
+For example`
 
 type X = {
   readonly a: () => 1
@@ -37,4 +37,4 @@ type Expected = {
 }
 
 type Todo = DeepMutable<X> // should be same as `Expected`
-You can assume that we are only dealing with Objects in this challenge.Arrays, Functions, Classes and so on do not need to be taken into consideration.However, you can still challenge yourself by covering as many different cases as possible.
+`You can assume that we are only dealing with Objects in this challenge.Arrays, Functions, Classes and so on do not need to be taken into consideration.However, you can still challenge yourself by covering as many different cases as possible.`
