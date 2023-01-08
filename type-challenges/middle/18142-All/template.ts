@@ -1,4 +1,5 @@
-type All<T, U> =
-  T extends [infer F, ...infer R]
-  ? Equal<U, F> extends true ? All<R, U> : false
-  : true;
+type All<T extends any[], V> = T extends [infer F, ...infer R]
+  ? F extends V
+  ? All<R, V>
+  : false
+  : true
