@@ -11,3 +11,5 @@ type cases = [
   Expect<Equal<All<[[1], [1], [1]], [1]>, true>>,
   Expect<Equal<All<[{}, {}, {}], {}>, true>>,
 ]
+
+// add
