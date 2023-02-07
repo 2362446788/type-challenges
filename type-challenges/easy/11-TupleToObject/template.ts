@@ -4,6 +4,10 @@
 // 1、返回一个对象
 // 2、遍历数组
 // 3、做输入检测，对象的索引支持string|number|symbol
+// type TupleToObject<T extends readonly (string | number | symbol)[]> = {
+//   [P in T[number]]: P;
+// };
+
 type TupleToObject<T extends readonly (string | number | symbol)[]> = {
   [P in T[number]]: P;
 };
