@@ -6,6 +6,10 @@
 // };
 
 // 通过Exclude剔除选项再进行分配
+// type MyOmit<T, K extends keyof T> = {
+//   [P in Exclude<keyof T, K>]: T[P];
+// };
 type MyOmit<T, K extends keyof T> = {
   [P in Exclude<keyof T, K>]: T[P];
 };
+
