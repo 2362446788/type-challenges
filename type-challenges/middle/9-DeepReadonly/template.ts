@@ -10,6 +10,14 @@
 //     : T[P];
 // };
 
+// type DeepReadonly<T> = {
+//   readonly [P in keyof T]: T[P] extends Function
+//   ? T[P]
+//   : T[P] extends Record<string | number | symbol, any>
+//   ? DeepReadonly<T[P]>
+//   : T[P];
+// };
+
 type DeepReadonly<T> = {
   readonly [P in keyof T]: T[P] extends Function
   ? T[P]
