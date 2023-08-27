@@ -1,10 +1,14 @@
+type MyPick<T, K extends keyof T> = {
+    [P in K]: T[P];
+}
+
 // type MyPick<T, K extends keyof T> = {
 //   [P in K]: T[P];
 // };
 
-type MyPick<T, K extends keyof T> = {
-  [P in K]: T[P];
-};
+// type MyPick<T, K extends keyof T> = {
+//   [P in K]: T[P];
+// };
 
 // 按照js的思想
 
