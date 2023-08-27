@@ -1,10 +1,14 @@
+type MyReadonly<T> = {
+  readonly [K in keyof T]: T[K];
+}
+
 // type MyReadonly<T> = {
 //   readonly [P in keyof T]: T[P];
 // };
 
-type MyReadonly<T> = {
-  readonly [P in keyof T]: T[P];
-};
+// type MyReadonly<T> = {
+//   readonly [P in keyof T]: T[P];
+// };
 
 // 进行任务分解
 // 1、需要返回一个新对象
