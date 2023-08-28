@@ -8,9 +8,13 @@
 //   [P in T[number]]: P;
 // };
 
+// type TupleToObject<T extends readonly (string | number | symbol)[]> = {
+//   [P in T[number]]: P;
+// };
+
 type TupleToObject<T extends readonly (string | number | symbol)[]> = {
-  [P in T[number]]: P;
-};
+  [K in T[number]]: K;
+}
 
 type a = TupleToObject<string[]>;
 
@@ -28,6 +32,8 @@ type a1 = typeof arr1; // 转换为 (number|string)[]
 
 const arr2 = [1, "2"] as const;
 type a2 = typeof arr2; // 转换为 readonly [1, '2'] 不允许被修改
+
+type a22 = TupleToObject<a2>;
 
 const tuple: [number, string] = [1, "2"];
 
