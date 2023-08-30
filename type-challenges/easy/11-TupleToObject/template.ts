@@ -2,7 +2,7 @@
 
 // 题目分解：
 // 1、返回一个对象
-// 2、遍历数组
+// 2、遍历数组 
 // 3、做输入检测，对象的索引支持string|number|symbol
 // type TupleToObject<T extends readonly (string | number | symbol)[]> = {
 //   [P in T[number]]: P;
@@ -20,6 +20,13 @@ type a = TupleToObject<string[]>;
 
 // 1、遍历数组 T[number]
 // 2、typeof 转换类型
+// keyof array -> 索引
+
+type Index<T> = {
+  [K in keyof T]: K;
+}
+const arry = ['2', '3', '3'] as const;
+type AA = Index<typeof arry>;
 
 let str1 = "1";
 type s1 = typeof str1; // 转换为一个string
