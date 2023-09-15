@@ -12,4 +12,6 @@
 type MyOmit<T, K extends keyof T> = {
   [P in Exclude<keyof T, K>]: T[P];
 };
-
+type MyOmit1<T, U extends keyof T> = {
+  [Key in keyof T as Key extends U ? never : Key]: T[Key];
+};
