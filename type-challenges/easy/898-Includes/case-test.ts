@@ -1,5 +1,11 @@
 import type { Equal, Expect } from "@type-challenges/utils";
-import type { Includes } from "./template";
+
+// 使用 infer 推导，然后使用内置的 Equal 工具类型匹配是否为 true，然后再递归执行剩余参数
+type Includes<T extends any[], U> = T extends [infer F, ...infer R]
+? Equal<F, U> extends true
+  ? true
+  : Includes<R, U>
+: false;
 
 type cases = [
   Expect<

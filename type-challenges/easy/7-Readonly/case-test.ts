@@ -5,6 +5,8 @@ type MyReadonly<T> = {
   readonly [P in keyof T]: T[P];
 }
 
+type Test = MyReadonly<Todo1>;
+
 type cases = [
   Expect<Equal<MyReadonly<Todo1>, Readonly<Todo1>>>,
 ]
@@ -13,7 +15,7 @@ interface Todo1 {
   title: string
   description: string
   completed: boolean
-  meta: {
+  readonly meta: {
     author: string
   }
 }
