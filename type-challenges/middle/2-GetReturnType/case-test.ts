@@ -1,5 +1,8 @@
 import type { Equal, Expect } from "@type-challenges/utils";
 
+// 直接使用函数的结构，然后使用 infer 推导函数返回值即可
+type MyReturnType<T> = T extends (...args: any) => infer R ? R : never;
+
 type cases = [
   Expect<Equal<string, MyReturnType<() => string>>>,
   Expect<Equal<123, MyReturnType<() => 123>>>,
