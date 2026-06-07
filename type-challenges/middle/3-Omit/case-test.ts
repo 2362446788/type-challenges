@@ -6,6 +6,7 @@ type MyOmit<T, U extends keyof T> = {
 }
 
 type Test = MyOmit<Todo, "description">;
+type T1 = Omit<Todo, "description">;
 
 type cases = [
   Expect<Equal<Expected1, MyOmit<Todo, "description">>>,

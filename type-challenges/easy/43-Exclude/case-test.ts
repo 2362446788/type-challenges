@@ -4,6 +4,7 @@ import type { Equal, Expect } from "@type-challenges/utils";
 type MyExclude<T, U> = T extends U ? never : T;
 
 type Test = MyExclude<"a" | "b" | "c", "a">
+type T1 = Exclude<"a" | "b" | "c", "a">
 
 type cases = [
   Expect<Equal<MyExclude<"a" | "b" | "c", "a">, Exclude<"a" | "b" | "c", "a">>>,

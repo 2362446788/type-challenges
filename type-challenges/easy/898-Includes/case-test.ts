@@ -7,6 +7,10 @@ type Includes<T extends any[], U> = T extends [infer F, ...infer R]
   : Includes<R, U>
 : false;
 
+// 下面这样写不行，因为 extends 是子类型检查，不是“存在相等元素”
+// type Includes<T extends any[], U> = U extends T[number] ? true : false;
+type T1 = Includes<[{}], { a: "A" }>;
+
 type cases = [
   Expect<
     Equal<Includes<["Kars", "Esidisi", "Wamuu", "Santana"], "Kars">, true>
@@ -27,5 +31,5 @@ type cases = [
   Expect<Equal<Includes<[1], 1 | 2>, false>>,
   Expect<Equal<Includes<[1 | 2], 1>, false>>,
   Expect<Equal<Includes<[null], undefined>, false>>,
-  Expect<Equal<Includes<[undefined], null>, false>>
+  Expect<Equal<Includes<[undefined], null>, false>>,
 ];
