@@ -4,7 +4,7 @@ interface TreeNode {
   right: TreeNode | null
 }
 type InorderTraversal<T extends TreeNode | null> =
-  [T] extends [TreeNode]
+  T extends TreeNode
   ? (
     [
       ...InorderTraversal<T['left']>,
