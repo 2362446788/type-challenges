@@ -10,12 +10,14 @@ type AddOne<T extends number, R extends number[] = []> = R["length"] extends T
 type Section<
   Start extends number = 0,
   End extends number = 0,
-  R extends number[] = []
+  R extends number[] = [],
 > = End extends 0
   ? []
   : Start extends End
-  ? [...R]
-  : Section<AddOne<Start>, End, [...R, Start]>;
+    ? [...R]
+    : Section<AddOne<Start>, End, [...R, Start]>;
+
+// type T1 = Section<10, 0>;
 
 // 替换区间为[0, 1)
 type Fill<
@@ -23,9 +25,9 @@ type Fill<
   N,
   Start extends number = 0,
   End extends number = T["length"],
-  Val extends any[] = []
+  Val extends any[] = [],
 > = T extends [infer F, ...infer R]
   ? Val["length"] extends ArrToUnion<Section<Start, End>>
-  ? Fill<R, N, Start, End, [...Val, N]>
-  : Fill<R, N, Start, End, [...Val, F]>
+    ? Fill<R, N, Start, End, [...Val, N]>
+    : Fill<R, N, Start, End, [...Val, F]>
   : Val;
