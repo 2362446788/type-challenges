@@ -45,7 +45,7 @@ type Fill<
   End extends number = T["length"],
 > = FillItem<T, N, ArrToUnion<Section<Start, End>>>;
 
-type T1 = Fill<[1, 2, 3], 0>;
+type T1 = Fill<[1, 2, 3], 0, 2, 2>;
 
 type cases = [
   Expect<Equal<Fill<[], 0>, []>>,

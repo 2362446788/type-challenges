@@ -1,5 +1,19 @@
-# 29785 · DeepOmit
+Implement a typeDeepOmit, Like Utility types Omit, A type takes two arguments.
 
-题目地址：[tsch.js.org/29785](https://tsch.js.org/29785)
+For example:
 
-请在 `template.ts` 中补全当前题目的类型实现。
+```ts
+type obj = {
+  person: {
+    name: string;
+    age: {
+      value: number
+    }
+  }
+}
+
+type test1 = DeepOmit<obj, 'person'>    // {}
+type test2 = DeepOmit<obj, 'person.name'> // { person: { age: { value: number } } }
+type test3 = DeepOmit<obj, 'name'> // { person: { name: string; age: { value: number } } }
+type test4 = DeepOmit<obj, 'person.age.value'> // { person: { name: string; age: {} } }
+```
