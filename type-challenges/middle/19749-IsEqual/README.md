@@ -1,5 +1,13 @@
-# 19749 · IsEqual
+Implements the equal operator that returns a boolean for whether the two given types are equal.
 
-题目地址：[tsch.js.org/19749](https://tsch.js.org/19749)
+For example:
 
-请在 `template.ts` 中补全当前题目的类型实现。
+```ts
+type X1 = 1
+type Y1 = 1
+type T1 = IsEqual<X1, Y1> // expected to be true
+
+type X2 = 1
+type Y2 = 2
+type T2 = IsEqual<X2, Y2> // expected to be false
+```
